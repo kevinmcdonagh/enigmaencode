@@ -30,6 +30,7 @@ import android.widget.TextView;
 
 import org.bletchley.nfc.NdefMessageParser;
 import org.bletchley.nfc.record.ParsedNdefRecord;
+import org.bletchley.nfc.record.TextRecord;
 
 import java.util.List;
 
@@ -87,6 +88,17 @@ public class TagViewer extends Activity {
             // Setup the views
             setTitle(R.string.title_scanned_tag);
             buildTagViews(msgs);
+            
+            List<ParsedNdefRecord> records = NdefMessageParser.parse(msgs[0]);        	
+            TextRecord t = (TextRecord)records.get(0);
+            
+        	Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+        	shareIntent.setType("text/plain");
+        	shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Secret Code");
+        	shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, t.getText());
+
+        	startActivity(Intent.createChooser(shareIntent, "Share your message how?"));
+        	
         } else {
             Log.e(TAG, "Unknown intent " + intent);
             finish();
