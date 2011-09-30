@@ -1,0 +1,17 @@
+log/*.log
+tmp/**/*
+doc/api
+doc/app
+*~
+.DS_Store
+.lock
+.idea
+*.sqlite3
+.idea
+android/bin
+android/gen
+project/boot
+target
+.idea
+.idea_modules
+.history
