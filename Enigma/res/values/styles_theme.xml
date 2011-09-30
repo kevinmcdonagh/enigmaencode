@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- _THEME -->
+    <style name="Theme" parent="android:Theme" />
+    <style name="Theme.Enigma" parent="android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+        <item name="android:buttonStyle">@style/Widget.Button</item>
+    	<item name="android:textAppearanceLarge">@style/TextAppearance.Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance.Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance.Small</item>
+    </style>
+    
+    <style name="ThemeTransparentDialogBase" parent="@android:style/Theme.Black" /> 
+  	<style name="ThemeTransparentDialogBase.TransparentDialog">
+    	<item name="android:windowBackground">@android:color/transparent</item>
+    	<item name="android:windowFrame">@null</item>
+    	<item name="android:windowContentOverlay">@null</item>
+    	<item name="android:windowIsFloating">true</item>
+    	<item name="android:backgroundDimEnabled">true</item>
+    	<item name="android:windowIsTranslucent">true</item>
+    	<item name="android:windowNoTitle">true</item>
+   </style>
+    
+    <!-- Widget Styles -->
+    <style name="Widget">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+    </style>
+    
+    <style name="Widget.Button" parent="@android:style/Widget.Button">
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:minWidth">140dp</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="Widget.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:gravity">left</item>
+    </style>
+    
+	<style name="TextAppearance" parent="@android:style/TextAppearance" />
+	<style name="TextAppearance.Large" parent="@android:style/TextAppearance.Large">
+	    <item name="android:textSize">@dimen/text_size_h1</item>
+	</style>
+	<style name="TextAppearance.Medium" parent="@android:style/TextAppearance.Medium">
+		<item name="android:textSize">@dimen/text_size_p1</item>
+	</style>
+	<style name="TextAppearance.Small" parent="@android:style/TextAppearance.Small">
+		<item name="android:textSize">@dimen/text_size_small</item>
+	</style>
+
+
+	<!-- LIST -->
+	<style name="li_divider" parent="Fill.Width">
+		<item name="android:background">@android:color/black</item>
+		<item name="android:layout_height">1dp</item>
+	</style>
+</resources>

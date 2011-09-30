@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+	style="@style/Fill"
+    a:paddingLeft="@dimen/act_gutter_padding_left"
+    a:paddingRight="@dimen/act_gutter_padding_right"
+    a:background="@drawable/background_noise">
+    
+    <ImageView a:id="@+id/message_logo" a:layout_centerHorizontal="true" a:src="@drawable/ic_logo" />
+	
+	<EditText a:id="@+id/message_txt" a:layout_below="@+id/message_logo" a:hint="Enter your secret message" a:minLines="3" style="@style/Fill.Width"/>
+	
+	<Button a:id="@+id/message_btn_done" a:layout_below="@+id/message_txt" a:text="Next >" style="@style/Fill.Width"/>
+</RelativeLayout>

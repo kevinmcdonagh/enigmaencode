@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+	style="@style/Fill"
+    a:paddingLeft="@dimen/act_gutter_padding_left"
+    a:paddingRight="@dimen/act_gutter_padding_right">
+
+	<ImageView a:src="@drawable/ic_touch" />
+	
+</RelativeLayout>

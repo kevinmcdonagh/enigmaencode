@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- **WIDTH_HEIGHT -->
+	<!-- **TEXT -->
+
+	<!-- **WIDTH_HEIGHT -->	
+	<style name="Fill">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:orientation">vertical</item>
+	</style>
+	<style name="Wrap">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">vertical</item>
+	</style>
+	<style name="Fill.Wrap" parent="Fill">
+		<item name="android:paddingTop">@dimen/act_gutter_padding_top</item>
+		<item name="android:paddingLeft">@dimen/act_gutter_padding_left</item>
+		<item name="android:paddingRight">@dimen/act_gutter_padding_right</item>
+	</style>
+	<style name="Fill.Height" parent="Fill">
+		<item name="android:layout_width">wrap_content</item>
+	</style>
+	<style name="Fill.Width" parent="Fill">
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+	<style name="Fill.Width.Centre" parent="Fill.Width">
+		<item name="android:gravity">center</item>
+	</style>
+	<style name="Fill.Width.Horizontal" parent="Fill.Width">
+		<item name="android:orientation">horizontal</item>
+	</style>
+	<style name="Fill.Width.Horizontal.Wrap" parent="Fill.Width.Horizontal">
+		<item name="android:paddingLeft">@dimen/act_gutter_padding_left</item>
+		<item name="android:paddingRight">@dimen/act_gutter_padding_right</item>
+	</style>
+	<style name="Fill.HorizontalOrientation" parent="Fill">
+		<item name="android:orientation">horizontal</item>
+	</style>
+	<style name="Fill.Width.Wrap" parent="Fill.Width">
+		<item name="android:paddingTop">@dimen/act_gutter_padding_top</item>
+		<item name="android:paddingLeft">@dimen/act_gutter_padding_left</item>
+		<item name="android:paddingRight">@dimen/act_gutter_padding_right</item>
+	</style>
+
+	<!-- **TEXT -->
+	<style name="TextAppearance.Large.H1" parent="@android:style/TextAppearance">
+	    <item name="android:textSize">@dimen/text_size_h1</item>
+	</style>
+	<style name="TextAppearance.Large.H2" parent="@android:style/TextAppearance">
+	    <item name="android:textSize">@dimen/text_size_h2</item>
+	</style>
+	<style name="TextAppearance.Large.H3" parent="@android:style/TextAppearance">
+		<item name="android:textSize">@dimen/text_size_h3</item>
+	</style>
+	<style name="TextAppearance.Medium.P1" parent="@android:style/TextAppearance">
+		<item name="android:textSize">@dimen/text_size_p1</item>
+	</style>
+	<style name="TextAppearance.Medium.P2" parent="@android:style/TextAppearance">
+		<item name="android:textSize">@dimen/text_size_p2</item>
+	</style>
+
+</resources>	
