@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Text extends Activity {
     @Override
@@ -16,7 +17,11 @@ public class Text extends Activity {
         Button btn = (Button) findViewById(R.id.message_btn_done);
         btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				startActivity(new Intent(Text.this, Nfc.class));
+				Intent intent = new Intent(Text.this, NfcCollector.class);
+				TextView t = (TextView)findViewById(R.id.message_txt);
+				
+				intent.putExtra(android.content.Intent.EXTRA_TEXT, t.getText().toString());
+				startActivity(intent);
 			}
 		});
     }
