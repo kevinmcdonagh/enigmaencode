@@ -13,7 +13,14 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".NfcCollector"
+        <activity android:name=".TextDecoder" android:label="Text Decoder">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".NfcEncryptCollector"
                   android:label="Engima Encode"
                   android:launchMode="singleInstance">
 			<intent-filter>
@@ -27,19 +34,26 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".TagViewer" >
-        </activity>
-
-        <activity android:name=".HashDecoder"  android:label="Engima Decode">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity android:name=".NfcDecryptRevealer"
+                  android:label="Engima Decode"
+                  android:launchMode="singleInstance">
+			<intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <data android:mimeType="text/*" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
             	<action android:name="android.intent.action.SEND" />
    				<category android:name="android.intent.category.DEFAULT" />
    				<data android:mimeType="text/*" />
 			</intent-filter>
+        </activity>
+        
+        <activity android:name=".TweetDecoder"  android:label="Engima Decode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
     

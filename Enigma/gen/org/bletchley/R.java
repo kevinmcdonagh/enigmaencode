@@ -43,9 +43,10 @@ public final class R {
         public static final int act_decoder=0x7f030000;
         public static final int act_nfc=0x7f030001;
         public static final int act_text=0x7f030002;
-        public static final int tag_divider=0x7f030003;
-        public static final int tag_text=0x7f030004;
-        public static final int tag_viewer=0x7f030005;
+        public static final int act_textdecode=0x7f030003;
+        public static final int tag_divider=0x7f030004;
+        public static final int tag_text=0x7f030005;
+        public static final int tag_viewer=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

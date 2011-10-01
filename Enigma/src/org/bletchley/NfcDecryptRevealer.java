@@ -1,6 +1,8 @@
 package org.bletchley;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.bletchley.cypher.EncryptMgr;
 import org.bletchley.nfc.NdefMessageParser;
@@ -19,7 +21,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class NfcCollector extends Activity{
+public class NfcDecryptRevealer extends Activity{
 
 	String msg = "";
     static final String TAG = "ViewTag";
@@ -52,9 +54,8 @@ public class NfcCollector extends Activity{
 		
 		Intent i = getIntent();
         String msgToEncrypt = i.getStringExtra(android.content.Intent.EXTRA_TEXT);
-        Log.i("TAG", "collecting text = " + msgToEncrypt);
         if(msgToEncrypt!=null && msgToEncrypt!=""){
-        	this.msg = msgToEncrypt;
+        	this.msg = hackishlySanatiseTweet(msgToEncrypt);
         }
 	}
 	
@@ -86,19 +87,14 @@ public class NfcCollector extends Activity{
             
             List<ParsedNdefRecord> records = NdefMessageParser.parse(msgs[0]);        	
             TextRecord t = (TextRecord)records.get(0);
-            Log.i("TAG", "Secret key is" + t.getText());
+            Log.i("TAG", "DECRYPT: Secret key is" + t.getText());
             
-            
-            String text = EncryptMgr.encrypt("secretcode", this.msg);
-            
-        	Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
-        	shareIntent.setType("text/plain");
-        	shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Secret Code");
-        	shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, text);
+            String text = EncryptMgr.decrypt(t.getText(), this.msg);
+        	Intent revealer = new Intent(NfcDecryptRevealer.this, TweetDecoder.class);
         	
-        	Log.i("TAG", "code:" + text);
-        	
-        	startActivity(Intent.createChooser(shareIntent, "Share your message how?"));
+        	Log.i("TAG", "DECRYPTING: passing text:" + text);
+        	revealer.putExtra(android.content.Intent.EXTRA_TEXT, text);
+        	startActivity(revealer);
         	
         } else {
             Log.e(TAG, "Unknown intent " + intent);
@@ -106,5 +102,24 @@ public class NfcCollector extends Activity{
             return;
         }
     }
+    
+	private String hackishlySanatiseTweet(String msgToEncrypt) {
+		Matcher m = Pattern.compile("\"(?:[^\\\\\"]+|\\\\.)*\"").matcher(msgToEncrypt);
+		if (m.find()){
+			msgToEncrypt = m.group(0);
+		}
+		Log.i("TAG", msgToEncrypt);
+		
+		
+		m = Pattern.compile(":.*").matcher(msgToEncrypt);
+		if (m.find()){
+			msgToEncrypt = m.group(0);
+		}
+		
+		msgToEncrypt = msgToEncrypt.substring(1);
+		msgToEncrypt = msgToEncrypt.substring(0, msgToEncrypt.length() -1);
+//		String s = (String) msgToEncrypt.subSequence(1, msgToEncrypt.lastIndexOf(msgToEncrypt));
+		return msgToEncrypt;
+	}
 
 }

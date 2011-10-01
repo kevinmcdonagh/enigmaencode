@@ -17,7 +17,7 @@ public class Text extends Activity {
         Button btn = (Button) findViewById(R.id.message_btn_done);
         btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(Text.this, NfcCollector.class);
+				Intent intent = new Intent(Text.this, NfcEncryptCollector.class);
 				TextView t = (TextView)findViewById(R.id.message_txt);
 				
 				intent.putExtra(android.content.Intent.EXTRA_TEXT, t.getText().toString());
