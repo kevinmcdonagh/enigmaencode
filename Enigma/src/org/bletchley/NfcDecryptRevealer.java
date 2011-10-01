@@ -62,7 +62,6 @@ public class NfcDecryptRevealer extends Activity{
     void resolveIntent(Intent intent) {
         // Parse the intent
         String action = intent.getAction();
-        String msgToEncrypt = intent.getStringExtra(android.content.Intent.EXTRA_TEXT);
         
         if ("android.nfc.action.NDEF_DISCOVERED".equals(action)) {
         	

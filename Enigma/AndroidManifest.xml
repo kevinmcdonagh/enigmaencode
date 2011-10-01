@@ -14,10 +14,6 @@
         </activity>
         
         <activity android:name=".TextDecoder" android:label="Text Decoder">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <activity android:name=".NfcEncryptCollector"
@@ -27,10 +23,6 @@
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <data android:mimeType="text/*" />
                 <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
@@ -50,10 +42,6 @@
         </activity>
         
         <activity android:name=".TweetDecoder"  android:label="Engima Decode">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
     

@@ -3,11 +3,11 @@
 	style="@style/Fill"
     a:paddingLeft="@dimen/act_gutter_padding_left"
     a:paddingRight="@dimen/act_gutter_padding_right"
-    a:background="@drawable/background_noise">
+    a:background="@drawable/bg">
     
-    <ImageView a:id="@+id/message_logo" a:layout_centerHorizontal="true" a:src="@drawable/ic_logo" />
+    <ImageView a:id="@+id/message_logo" a:layout_centerHorizontal="true" a:src="@drawable/ic_logo" a:paddingBottom="20dp"/>
 	
-	<TextView a:id="@+id/message_txt" a:paddingTop="20dp" a:textSize="18sp" a:layout_below="@+id/message_logo" a:hint="Enter your secret message" a:minLines="3" style="@style/Fill.Width"/>
+	<TextView a:id="@+id/message_txt" a:background="#ffffff" a:textSize="22sp" a:gravity="center" a:layout_below="@+id/message_logo" a:hint="Enter your secret message" a:minLines="5" style="@style/Fill.Width" a:layout_marginRight="@dimen/act_gutter_padding_right" a:layout_marginLeft="@dimen/act_gutter_padding_left"/>
 	
-	<Button a:id="@+id/message_btn_reply" a:layout_below="@+id/message_txt" a:text="Reply >" style="@style/Fill.Width"/>
+	<Button a:id="@+id/message_btn_reply" a:layout_below="@+id/message_txt" a:textSize="22sp" a:text="Reply >" style="@style/Fill.Width" />
 </RelativeLayout>
