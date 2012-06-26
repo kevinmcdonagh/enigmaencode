@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
 	style="@style/Fill"
+	a:paddingTop="@dimen/act_gutter_padding_top"
     a:paddingLeft="@dimen/act_gutter_padding_left"
     a:paddingRight="@dimen/act_gutter_padding_right"
     a:background="@drawable/bg">
     
-    <ImageView a:id="@+id/message_logo" a:layout_centerHorizontal="true" a:src="@drawable/ic_logo" a:paddingBottom="20dp"/>
+    <ImageView a:id="@+id/message_logo" a:layout_centerHorizontal="true" a:src="@drawable/ic_logo" a:paddingBottom="14dp"/>
 	
-	<TextView a:id="@+id/message_txt" a:background="#ffffff" a:textSize="22sp" a:gravity="center" a:layout_below="@+id/message_logo" a:hint="Enter your secret message" a:minLines="5" style="@style/Fill.Width" a:layout_marginRight="@dimen/act_gutter_padding_right" a:layout_marginLeft="@dimen/act_gutter_padding_left"/>
+	<TextView a:id="@+id/message_txt" a:layout_marginBottom="@dimen/act_gutter_padding_bottom" a:background="#ffffff" a:textSize="22sp" a:gravity="center" a:paddingBottom="14dp" a:layout_below="@+id/message_logo" a:hint="Enter your secret message" a:minLines="5" style="@style/Fill.Width" a:layout_marginRight="@dimen/act_gutter_padding_right" a:layout_marginLeft="@dimen/act_gutter_padding_left" a:paddingRight="@dimen/act_gutter_padding_right" a:paddingLeft="@dimen/act_gutter_padding_left"/>
 	
-	<Button a:id="@+id/message_btn_reply" a:layout_below="@+id/message_txt" a:textSize="22sp" a:text="Reply >" style="@style/Fill.Width" />
+	<Button a:id="@+id/message_btn_reply" a:background="@drawable/btn_bg" a:gravity="center|top" a:paddingTop="11dp" a:paddingLeft="8dp" a:textColor="#edeaea" a:layout_below="@+id/message_txt" a:textSize="22sp" a:text="Reply" style="@style/Fill.Width" />
 </RelativeLayout>
